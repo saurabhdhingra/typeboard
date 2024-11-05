@@ -15,7 +15,7 @@ export async function createNewDocument() {
 
   await adminDb
     .collection("users")
-    .doc(sessionClaims?.email!)
+    .doc(sessionClaims?.email! as string)
     .collection("rooms")
     .doc(docRef.id)
     .set({ userId: sessionClaims?.email, role: "owner", createdAt: new Date(), roomId: docRef.id });

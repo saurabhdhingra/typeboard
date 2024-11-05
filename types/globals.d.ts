@@ -1,8 +1,7 @@
-import {User} from 'types';
+import { User } from "types";
 
-export {}
-
+export {};
 
 declare global {
-    interface CustomJwtSessionClaims extends User {}
+  interface JwtPayload extends User {}
 }
