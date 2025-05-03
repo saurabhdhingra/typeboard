@@ -50,6 +50,9 @@ function InviteUser() {
           <DialogTitle>Invite a user to collaborate!</DialogTitle>
           <DialogDescription>Enter the email of the user you want to invite.</DialogDescription>
         </DialogHeader>
+
+      
+
         <form className="flex gap-2" onSubmit={handleInvite}>
           <Input
             type="email"
