@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TypeBoard – Collaborative Notepad
 
-## Getting Started
+TypeBoard is a real-time **collaborative notepad** that allows multiple users to edit a shared document together. Users can invite others via email and view live cursor positions, making it ideal for brainstorming, planning, or simply writing together.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Real-time Collaboration** – Multiple users can edit the same document simultaneously
+- **Email-based Invites** – Securely add collaborators using email
+- **Live Cursor Tracking** – See where others are typing in real-time via **Liveblocks**
+- Authentication & access control for private documents
+- Auto-save and document state management
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What I Learned
 
-## Learn More
+- Integrated **Liveblocks** for real-time presence and collaborative editing
+- Managed user sessions and document-level access control
+- Handled real-time cursor positioning and document sync
+- Enhanced front-end UX with dynamic presence indicators
+- Worked on secure invite logic and collaborative permissions
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **React**
+- **Liveblocks**
+- **Firebase** (for auth, invites, and doc storage)
+- **Tailwind CSS**
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you're a recruiter or developer looking to connect, feel free to reach out:
+
+- [LinkedIn](https://www.linkedin.com/in/saurabhdhingraa/)
+- [GitHub](https://github.com/saurabhdhingra)
+- [Email](mailto:saurabh20work@gmail.com)
+
+
+## Support
+
+If you like this project or found it helpful, feel free to give it a ⭐️ — every bit of support counts!
+
+
