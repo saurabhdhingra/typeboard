@@ -29,8 +29,8 @@ function Document({ id }: { id: string }) {
     event.preventDefault();
 
     if (input.trim()) {
-      startTransition(async () => {
-        await updateDoc(doc(db, "documents", id), {
+      startTransition(() => {
+        updateDoc(doc(db, "documents", id), {
           title: input,
         });
       });

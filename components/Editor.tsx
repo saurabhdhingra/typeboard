@@ -30,7 +30,7 @@ function BlockNote({ doc, provider, darkMode }: EditorProps) {
 
   return (
     <div className="relative max-w-6xl mx-auto">
-      <BlockNoteView className="min-h-screen" editor={editor} theme={darkMode ? "dark" : "light"} />
+      <BlockNoteView className="min-h-screen" editor={editor as any} theme={darkMode ? "dark" : "light"} />
     </div>
   );
 }

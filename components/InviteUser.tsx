@@ -27,18 +27,17 @@ function InviteUser() {
     const roomId = pathName.split("/").pop();
     if (!roomId) return;
 
-    startTransition(async () => {
-      const { success } = await inviteUserToDocument(roomId, email);
-
-      if (success) {
-        setIsOpen(false);
+    startTransition(() => {
+      inviteUserToDocument(roomId, email).then(({ success }) => {
+        if (success) {
+          setIsOpen(false);
         setEmail("");
         toast.success("User added to Room successfully");
       } else {
         toast.error("Failed to add user to room!");
       }
     });
-  };
+  });
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <Button asChild variant="outline">
@@ -68,5 +67,6 @@ function InviteUser() {
       </DialogContent>
     </Dialog>
   );
+}
 }
 export default InviteUser;
