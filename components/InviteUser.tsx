@@ -10,9 +10,8 @@ import {
 } from "@/components/ui/dialog";
 import { FormEvent, useState, useTransition } from "react";
 import { Button } from "./ui/button";
-import { DialogClose } from "@radix-ui/react-dialog";
-import { usePathname, useRouter } from "next/navigation";
-import { deleteDocument, inviteUserToDocument } from "@/actions/actions";
+import { usePathname } from "next/navigation";
+import { inviteUserToDocument } from "@/actions/actions";
 import { toast } from "sonner";
 import { Input } from "./ui/input";
 
@@ -21,9 +20,9 @@ function InviteUser() {
   const [email, setEmail] = useState("");
   const [isPending, startTransition] = useTransition();
   const pathName = usePathname();
-  const router = useRouter();
 
   const handleInvite = async (e: FormEvent) => {
+    e.preventDefault();
     const roomId = pathName.split("/").pop();
     if (!roomId) return;
 
@@ -31,13 +30,14 @@ function InviteUser() {
       inviteUserToDocument(roomId, email).then(({ success }) => {
         if (success) {
           setIsOpen(false);
-        setEmail("");
-        toast.success("User added to Room successfully");
-      } else {
-        toast.error("Failed to add user to room!");
-      }
+          setEmail("");
+          toast.success("User added to Room successfully");
+        } else {
+          toast.error("Failed to add user to room!");
+        }
+      });
     });
-  });
+  };
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <Button asChild variant="outline">
@@ -67,6 +67,5 @@ function InviteUser() {
       </DialogContent>
     </Dialog>
   );
-}
 }
 export default InviteUser;

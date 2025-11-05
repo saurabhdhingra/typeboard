@@ -5,7 +5,6 @@ import { LiveblocksYjsProvider } from "@liveblocks/yjs";
 import { Button } from "./ui/button";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { BlockNoteView } from "@blocknote/shadcn";
-import { BlockNoteEditor } from "@blocknote/core";
 import { useCreateBlockNote } from "@blocknote/react";
 import "@blocknote/core/fonts/inter.css";
 import "@blocknote/shadcn/style.css";
@@ -20,7 +19,7 @@ type EditorProps = {
 function BlockNote({ doc, provider, darkMode }: EditorProps) {
   const userInfo = useSelf((me) => me.info);
 
-  const editor: BlockNoteEditor = useCreateBlockNote({
+  const editor = useCreateBlockNote({
     collaboration: {
       provider,
       fragment: doc.getXmlFragment("document-store"),
@@ -30,7 +29,7 @@ function BlockNote({ doc, provider, darkMode }: EditorProps) {
 
   return (
     <div className="relative max-w-6xl mx-auto">
-      <BlockNoteView className="min-h-screen" editor={editor as any} theme={darkMode ? "dark" : "light"} />
+      <BlockNoteView className="min-h-screen" theme={darkMode ? "dark" : "light"} editor={editor as any} />
     </div>
   );
 }
