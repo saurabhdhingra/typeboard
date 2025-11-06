@@ -12,7 +12,7 @@ TypeBoard is a real-time **collaborative notepad** that allows multiple users to
 - Auto-save and document state management
 
 
-## What I Learned
+## Learning outcomes
 
 - Integrated **Liveblocks** for real-time presence and collaborative editing
 - Managed user sessions and document-level access control
@@ -23,7 +23,7 @@ TypeBoard is a real-time **collaborative notepad** that allows multiple users to
 
 ## Tech Stack
 
-- **React**
+- **Next.js**
 - **Liveblocks**
 - **Firebase** (for auth, invites, and doc storage)
 - **Tailwind CSS**
